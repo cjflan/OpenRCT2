@@ -14,7 +14,7 @@ jobs:
         orkaIP: http://10.221.188.100
         orkaUser: ${{ secrets.ORKA_USER }}
         orkaPass: ${{ secrets.ORKA_PASS }}
-        orkaBaseImage: gha-agent-bigsur-v1.img           # NOTE: this `.img` file is the agent that has been defined in Orka
+        orkaBaseImage: gha_bigsur_v3.img          # NOTE: this `.img` file is the agent that has been defined in Orka
         githubUser: ${{ secrets.GH_USER }}           # All other Orka-related values can be found in your provided IP Plan
         githubPat: ${{ secrets.GH_PAT }}
         githubRepoName: orka-actions-up
@@ -45,7 +45,7 @@ jobs:
         orkaIP: http://10.221.188.100
         orkaUser: ${{ secrets.ORKA_USER }}
         orkaPass: ${{ secrets.ORKA_PASS }}
-        orkaBaseImage: gha-agent-bigsur-v1.img
+        orkaBaseImage: gha_bigsur_v3.img
         githubUser: ${{ secrets.GH_USER }}
         githubPat: ${{ secrets.GH_PAT }}
         githubRepoName: orka-actions-up
