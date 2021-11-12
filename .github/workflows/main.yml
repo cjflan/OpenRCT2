@@ -34,7 +34,7 @@ jobs:
       run: |
         sw_vers
   job3:
-    if: always()
+    # if: always()
     needs: [job1, job2]               # NOTE: all jobs you wish to run on the macOS instance, 
     runs-on: ubuntu-latest            # along with the `orka-actions-up` job, must be listed here.
     steps:
