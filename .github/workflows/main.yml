@@ -54,3 +54,4 @@ jobs:
         vpnAddress: ${{ secrets.VPN_ADDRESS }}
         vpnServerCert: ${{ secrets.VPN_SERVER_CERT }}
         vmName: ${{ needs.job1.outputs.vm-name }}
+
