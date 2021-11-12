@@ -17,7 +17,7 @@ jobs:
         orkaBaseImage: gha_bigsur_v2.img          # NOTE: this `.img` file is the agent that has been defined in Orka
         githubUser: ${{ secrets.GH_USER }}           # All other Orka-related values can be found in your provided IP Plan
         githubPat: ${{ secrets.GH_PAT }}
-        githubRepoName: orka-actions-up
+        githubRepoName: OpenRCT2
         vpnUser: ${{ secrets.VPN_USER }}
         vpnPassword: ${{ secrets.VPN_PASSWORD }}
         vpnAddress: ${{ secrets.VPN_ADDRESS }}
@@ -48,7 +48,7 @@ jobs:
         orkaBaseImage: gha_bigsur_v2.img
         githubUser: ${{ secrets.GH_USER }}
         githubPat: ${{ secrets.GH_PAT }}
-        githubRepoName: orka-actions-up
+        githubRepoName: OpenRCT2
         vpnUser: ${{ secrets.VPN_USER }}
         vpnPassword: ${{ secrets.VPN_PASSWORD }}
         vpnAddress: ${{ secrets.VPN_ADDRESS }}
