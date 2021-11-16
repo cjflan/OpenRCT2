@@ -13,7 +13,7 @@ jobs:
       with:
         orkaUser: ${{ secrets.ORKA_USER }}
         orkaPass: ${{ secrets.ORKA_PASS }}
-        orkaBaseImage: gha_bigsur_v3.img            # NOTE: this `.img` file is the agent that has been defined in Orka
+        orkaBaseImage: gha-agent-bigsur-v2.img            # NOTE: this `.img` file is the agent that has been defined in Orka
         githubPat: ${{ secrets.GH_PAT }}             
         vpnUser: ${{ secrets.VPN_USER }}
         vpnPassword: ${{ secrets.VPN_PASSWORD }}
