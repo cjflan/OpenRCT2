@@ -7,13 +7,13 @@ jobs:
   job1:
     runs-on: ubuntu-latest          # NOTE: both orka-actions-up and orka-actions-down run on `ubuntu-latest`
     steps:
-    - name: Job 1
+    - name: Launch VM
       id: job1
       uses: jeff-vincent/orka-actions-up@v1.1.1
       with:
         orkaUser: ${{ secrets.ORKA_USER }}
         orkaPass: ${{ secrets.ORKA_PASS }}
-        orkaBaseImage: gha-agent-bigsur-v2.img            # NOTE: this `.img` file is the agent that has been defined in Orka
+        orkaBaseImage: gha-agent-bigsur.img            # NOTE: this `.img` file is the agent that has been defined in Orka
         githubPat: ${{ secrets.GH_PAT }}             
         vpnUser: ${{ secrets.VPN_USER }}
         vpnPassword: ${{ secrets.VPN_PASSWORD }}
@@ -28,16 +28,21 @@ jobs:
     needs: job1     
     runs-on: [self-hosted, "${{ needs.job1.outputs.vm-name }}"]     # NOTE: this section of the workflow can contain any number of seperate jobs,
     steps:                                                          # but each must have this `runs-on` value.
-    - name: Job 2
+    - name: Build OpenRCT2
       id: job2
-      run: |
-        sw_vers
+      run: rm -rf OpenRCT2
+      run: git clone https://github.com/cjflan/OpenRCT2.git
+      run: cd OpenRCT2
+      run: mkdir build
+      run: cd build
+      run: /usr/local/bin/cmake ..
+      run: /usr/bin/make
   job3:
     if: always()
     needs: [job1, job2]               # NOTE: all jobs you wish to run on the macOS instance, 
     runs-on: ubuntu-latest            # along with the `orka-actions-up` job, must be listed here.
     steps:
-    - name: Job 3
+    - name: Tear Down VM
       id: job3
       uses: jeff-vincent/orka-actions-down@v1.1.0
       with:
