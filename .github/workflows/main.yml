@@ -30,14 +30,14 @@ jobs:
     steps:                                                          # but each must have this `runs-on` value.
     - name: Build OpenRCT2
       id: job2
-      run: |
-        rm -rf OpenRCT2
-        git clone https://github.com/cjflan/OpenRCT2.git
-        cd OpenRCT2
-        mkdir build
-        cd build
-        /usr/local/bin/cmake ..
-        /usr/bin/make
+      run: uname -a
+        #rm -rf OpenRCT2
+        #git clone https://github.com/cjflan/OpenRCT2.git
+        #cd OpenRCT2
+        #mkdir build
+        #cd build
+        #/usr/local/bin/cmake ..
+        # /usr/bin/make
   job3:
     if: always()
     needs: [job1, job2]               # NOTE: all jobs you wish to run on the macOS instance, 
