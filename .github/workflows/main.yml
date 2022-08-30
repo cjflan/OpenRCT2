@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Launch VM
       id: job1
-      uses: cjflan/orka-actions-up@v1.1.1
+      uses: cjflan/orka-actions-up@v1
       with:
         orkaUser: ${{ secrets.ORKA_USER }}
         orkaPass: ${{ secrets.ORKA_PASS }}
@@ -45,7 +45,7 @@ jobs:
     steps:
     - name: Tear Down VM
       id: job3
-      uses: cjflan/orka-actions-down@v1.1.0
+      uses: cjflan/orka-actions-down@v1
       with:
         orkaUser: ${{ secrets.ORKA_USER }}
         orkaPass: ${{ secrets.ORKA_PASS }}
